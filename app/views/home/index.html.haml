@@ -1,0 +1,14 @@
+%div
+  / Nav tabs
+  %ul.nav.nav-tabs{role: :tablist}
+    %li.active{role: :presentation}
+      %a{aria: { controls: :linear_equation }, data: { toggle: :tab }, href: "#linear_equation", role: :tab} Linear Equation
+    %li{role: :presentation}
+      %a{aria: { controls: :quadratic_equation }, data: { toggle: :tab }, href: "#quadratic_equation", role: :tab} Quadratic Equation
+  / Tab panes
+  .tab-content
+    #linear_equation.tab-pane.active{role: :tabpanel}
+      = render 'linear_equation_form', equation: LinearEquationForm.new
+
+    #quadratic_equation.tab-pane{role: :tabpanel}
+      = render 'quadratic_equation_form', equation: QuadraticEquationForm.new

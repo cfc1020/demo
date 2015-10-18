@@ -1,0 +1,15 @@
+= simple_form_for equation, as: :equation, url: home_calculate_path, method: :get, html: { id: 'new_linear_equation' }, remote: true do |f|
+  = f.error_notification
+  = full_errors_messges!(equation)
+  
+  = f.input :equation_type, as: :hidden, input_html: { value: :linear_equation }
+  
+  .form-inputs
+  
+    = f.input :a
+    = f.input :b
+  
+  = f.input :roots, input_html: { disabled: :disabled }
+  
+  .form-actions
+    .col-md-6= f.button :submit, 'Calculates!', class: 'btn btn-success'

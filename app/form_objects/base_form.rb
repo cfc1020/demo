@@ -1,11 +1,11 @@
 class BaseForm
   include ActiveModel::Model
+  include Virtus.model
 
-  class_attribute :attributes, instance_writer: false
-
-  def self.fields(*names)
-    self.attributes = Array(names)
-    self.send :attr_accessor, *attributes
+  def self.fields(names)
+    names.each do |variable, type|
+      self.attribute variable, type
+    end
   end
 
   def persisted?

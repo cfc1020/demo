@@ -1,19 +1,35 @@
 class QuadraticEquationForm < BaseEquationForm
-  fields :a, :b, :c
+  fields a: Float, b: Float, c: Float
   
   validates :a, presence: true
   validates :b, presence: true
   validates :c, presence: true
   
-  before_validation :check_discriminant
+  validates :a, numericality: true, allow_blank: true
+  validates :b, numericality: true, allow_blank: true
+  validates :c, numericality: true, allow_blank: true
+  
+  validate :check_discriminant
 
   def calculate!
     return false if invalid?
-    
-    [x1, x2]
+
+    calculate_roots!
+  end
+  
+  def html_id
+    '#new_quadratic_equation'
+  end
+  
+  def form_path
+    'home/quadratic_equation_form'
   end
   
   private
+  
+  def calculate_roots!
+    @roots ||= [x1, x2]
+  end
   
   def discriminant
     @discriminant ||= b * b - 4 * a * c
@@ -32,6 +48,8 @@ class QuadraticEquationForm < BaseEquationForm
   end
   
   def check_discriminant
+    return if self.errors.present?
+
     self.errors.add :base, 'There are no real roots, because discriminant is negative' if discriminant < 0
   end
 end
