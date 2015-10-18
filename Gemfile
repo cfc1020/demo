@@ -1,12 +1,23 @@
 source 'https://rubygems.org'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap-select', '~> 1.7.3'
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-# Use SCSS for stylesheets
+# Use SCSS for stylesheets and HAML for views with bootstrap and jQuery
 gem 'sass-rails', '~> 5.0'
+gem 'haml-rails', '~> 0.9'
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'jquery-rails'
+
+# enum
+gem 'enum_help', '~> 0.0.14'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -20,6 +31,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+# View Extensions
+gem 'simple_form', '~> 3.1.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -41,5 +54,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
+  gem 'better_errors', '~> 2.1.1'
+  gem 'binding_of_caller', '~> 0.7.2'
+  gem 'pry-rails', '~> 0.3.3'
 end
 
