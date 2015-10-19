@@ -9,11 +9,10 @@ end
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-# Use SCSS for stylesheets and HAML for views with bootstrap and jQuery
+# Use SCSS for stylesheets and HAML for views with bootstrap
 gem 'sass-rails', '~> 5.0'
 gem 'haml-rails', '~> 0.9'
 gem 'bootstrap-sass', '~> 3.3.3'
-gem 'jquery-rails'
 
 # enum
 gem 'enum_help', '~> 0.0.14'
@@ -35,6 +34,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'simple_form', '~> 3.1.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'virtus'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
