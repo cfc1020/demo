@@ -36,15 +36,15 @@ class QuadraticEquationForm < BaseEquationForm
   end
   
   def sqrt_from_discriminant
-    @sqrt_from_discriminant ||= Math.sqrt @discriminant
+    @sqrt_from_discriminant ||= Math.sqrt discriminant
   end
   
   def x1
-    @x1 ||= (-b + sqrt_from_discriminant) / 2 * a
+    @x1 ||= (-b + sqrt_from_discriminant) / (2 * a)
   end
   
   def x2
-    @x2 ||= (-b - sqrt_from_discriminant) / 2 * a
+    @x2 ||= (-b - sqrt_from_discriminant) / (2 * a)
   end
   
   def check_discriminant
